@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <h1>Gallery</h1>
+  <div class="row">
+    {% for image in images %}
+  <div class="col-sm-6 col-md-4 col-lg-3">
+    <a href="static/images/{{ image }}" target="_blank">
+      <img src="static/images/{{ image }}" class="img-thumbnail" alt="">
+    </a>
+    <center><a href="static/images/{{ image }}" class="btn btn-secondary text-white" download>Download</a></center>
+  </div>
+{% endfor %}
+
+  </div>
+{% endblock %}

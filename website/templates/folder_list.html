@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <h1>Choose a Folder:</h1>
+  <ul>
+    {% for folder in folders %}
+      <li><a href="{{ url_for('auth.gallery', folder=folder) }}">{{ folder }}</a></li>
+    {% endfor %}
+  </ul>
+{% endblock %}

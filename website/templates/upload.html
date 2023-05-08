@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <h1>Upload Image</h1>
+  <form method="post" enctype="multipart/form-data">
+    <div class="form-group">
+      <label for="file">Choose File:</label>
+      <input type="file" name="file" id="file" class="form-control-file">
+    </div>
+    <div class="form-group">
+      <label for="folder">Choose Folder:</label>
+      <select name="folder_name" id="folder" class="form-control">
+        <option value="">-- Select a Folder --</option>
+        {% for folder in folders %}
+        <option value="{{ folder }}">{{ folder }}</option>
+        {% endfor %}
+      </select>
+    </div>
+    <div class="form-group">
+      <label for="new_folder">Create New Folder:</label>
+      <input type="text" name="new_folder_name" id="new_folder" class="form-control">
+    </div>
+    <button type="submit" class="btn btn-primary">Upload</button>
+  </form>
+{% endblock %}
